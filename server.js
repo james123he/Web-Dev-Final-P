@@ -11,7 +11,7 @@ var port = process.env.PORT || 3000
 app.set('views', path.join(__dirname, 'views'));
 app.use('/videos', express.static(path.join(__dirname, 'videos')));
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.engine('handlebars', exphbs.engine({
     defaultLayout: 'main'

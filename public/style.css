@@ -1,0 +1,354 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #f8f9fa;
+    --text-color: #202124;
+    --border-color: #dadce0;
+    --header-height: 60px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  #home-icon img {
+    height: 40px;
+    width: auto;
+    margin-right: 20px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    margin-right: auto;
+  }
+  
+  .search-form {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .search-form input {
+    flex: 1;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    font-size: 1rem;
+  }
+  
+  .search-form button {
+    padding: 8px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .search-form button:hover {
+    background-color: #1557b0;
+  }
+  
+  /* Container Styles */
+  .container {
+    margin-top: calc(var(--header-height) + 20px);
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+/* Video Grid Styles */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Video Item Styles */
+.video-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-item:hover {
+  transform: translateY(-4px);
+}
+
+.video-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.video-title {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.video-description {
+  padding: 0 12px 12px;
+  font-size: 0.9rem;
+  color: #5f6368;
+}
+
+/* Video Player Styles */
+.video-player-container {
+  max-width: 1000px;
+  margin: calc(var(--header-height) + 20px) auto 0;
+  padding: 0 20px;
+}
+
+.video-player {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: black;
+  margin: 20px 0;
+}
+
+/* Menu Styles */
+#menu-bar {
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  bottom: 0;
+  width: 250px;
+  background: white;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: 90;
+}
+
+#menu-bar.show-menu {
+  transform: translateX(0);
+}
+
+#menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#menu-backdrop.show-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu-bar ul {
+  list-style: none;
+}
+
+#menu-bar li a {
+  display: block;
+  padding: 12px 16px;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+#menu-bar li a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Upload Box Styles */
+.show-upload-box {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.show-upload-box:hover {
+  transform: scale(1.1);
+}
+
+.upload-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 110;
+}
+
+.upload-box.show-upload {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.upload-box label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.upload-box input[type="text"],
+.upload-box input[type="url"],
+.upload-box textarea,
+.upload-box select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.upload-box textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.upload-box button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+/* Filter Modal Styles */
+#filter-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 110;
+}
+
+#filter-modal.show-filter {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-hide-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #5f6368;
+}
+
+.filter-input-element {
+  margin-bottom: 16px;
+}
+
+.filter-input-element label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.filter-input-element select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    display: none;
+  }
+  
+  .search-form {
+    max-width: none;
+  }
+  
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .search-form input {
+    max-width: 150px;
+  }
+  
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  
