@@ -1,0 +1,19 @@
+{
+  "name": "final-cs290",
+  "version": "1.0.0",
+  "description": "Express serving and Handlebars templating",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build-templates && node server.js",
+    "build-templates": "handlebars views/ -f public/templates.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1"
+  },
+  "devDependencies": {
+    "handlebars": "^4.7.8",
+    "handlebars-cli": "^0.1.2"
+  }
+}

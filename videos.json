@@ -1,0 +1,17 @@
+[
+    {
+      "id": "1",
+      "title": "First Sample Video",
+      "description": "This is a description of the first video.",
+      "thumbnail": "/images/video1-thumbnail.jpg",
+      "url": "/videos/video1.mp4"
+    },
+    {
+      "id": "2",
+      "title": "Second Sample Video",
+      "description": "Another video description.",
+      "thumbnail": "/images/video2-thumbnail.jpg",
+      "url": "/videos/video2.mp4"
+    }
+  ]
+  

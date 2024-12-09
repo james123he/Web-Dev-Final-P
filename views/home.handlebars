@@ -1,0 +1,12 @@
+{{!< layouts/main}}
+<div class="container" id="recommended-page">
+    <div class="recommended">
+        <div class="section-title">Recommended</div>
+        <div class="video-grid">
+            {{#each recommendedVideos}}
+                {{> video}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+{{!< layouts/main}}
+<div class="container" id="search-page">
+    <div class="search-results">
+        <div class="section-title">Results for: "{{query}}"
+        </div>
+        <div class="video-grid">
+            {{#each searchResults}}
+                {{> video}}
+            {{/each}}
+        </div>
+    </div>
+</div>

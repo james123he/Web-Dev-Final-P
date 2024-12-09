@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Video Sharing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a id="home-icon" href="/">
+            <img src="/icon.png" alt="Home" />
+        </a>
+        <h1>Social Media Video Sharing</h1>
+        <form class="search-form" onsubmit="handleSearch(event)">
+            <input type="text" id="search-input" value="{{query}}" placeholder="Search videos" required>
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <div id="menu-backdrop" class="hide-menu"></div>
+    <div id="menu-bar" class="hide-menu">
+        <ul>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Post Video</a></li>
+            <li><a href="#">Filters</a></li>
+            <li><a href="#">Saved</a></li>
+        </ul>
+    </div>
+
+    {{{body}}}
+
+    <div id="upload-backdrop" class="hide-upload"></div>
+    <div class="upload-box" id="upload-box">
+        <label for="video-title">Title:</label>
+        <input type="text" id="video-title" placeholder="Enter video title">
+        <label for="video-url">URL:</label>
+        <input type="url" id="video-url" placeholder="Enter video URL">
+        <label for="video-description">Description:</label>
+        <textarea id="video-description" placeholder="Enter video description"></textarea>
+        <label>
+            <input type="checkbox" id="for-kids"> For Kids
+        </label>
+        <label>
+            <input type="checkbox" id="game"> Game
+        </label>
+        <button>Upload Video</button>
+    </div>
+
+    <button class="show-upload-box" onclick="toggleUploadBox()">+</button>
+
+    <script>
+        function handleSearch(e) {
+            e.preventDefault();
+            const query = document.getElementById('search-input').value.trim();
+            if (query) {
+                window.location.href = '/search/' + encodeURIComponent(query);
+            }
+        }
+
+        function toggleUploadBox() {
+            const uploadBox = document.getElementById('upload-box');
+            const backdrop = document.getElementById('upload-backdrop');
+            const isHidden = backdrop.classList.contains('hide-upload');
+
+            if (isHidden) {
+                backdrop.classList.remove('hide-upload');
+                uploadBox.style.display = 'flex';
+            } else {
+                backdrop.classList.add('hide-upload');
+                uploadBox.style.display = 'none';
+            }
+        }
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/templates.js" charset="utf-8"></script>
+<script src="/index.js" charset="utf-8"></script>
+
+</body>
+</html>
+
