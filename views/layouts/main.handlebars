@@ -49,7 +49,7 @@
         <button>Upload Video</button>
     </div>
 
-    <button class="show-upload-box" onclick="toggleUploadBox()">+</button>
+    <button class="show-upload-box">+</button>
 
     <script>
         function handleSearch(e) {
@@ -60,19 +60,6 @@
             }
         }
 
-        function toggleUploadBox() {
-            const uploadBox = document.getElementById('upload-box');
-            const backdrop = document.getElementById('upload-backdrop');
-            const isHidden = backdrop.classList.contains('hide-upload');
-
-            if (isHidden) {
-                backdrop.classList.remove('hide-upload');
-                uploadBox.style.display = 'flex';
-            } else {
-                backdrop.classList.add('hide-upload');
-                uploadBox.style.display = 'none';
-            }
-        }
     </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
