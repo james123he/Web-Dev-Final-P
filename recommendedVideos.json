@@ -2,12 +2,20 @@
     {
       "id": "3",
       "title": "Recommended Video A",
-      "thumbnail": "/images/videoA-thumbnail.jpg"
+      "thumbnail": "/images/videoA-thumbnail.jpg",
+      "description": "This is a description of the first recommended video.",
+      "url": "/videos/skiing.mp4",
+      "genre": "romance",
+      "forKids": "false"
     },
     {
       "id": "4",
       "title": "Recommended Video B",
-      "thumbnail": "/images/videoB-thumbnail.jpg"
+      "description": "This is a description of the second recommended video.",
+      "thumbnail": "/images/videoB-thumbnail.jpg",
+      "url": "/videos/sunset.mp4",
+      "genre": "comedy",
+      "forKids": "true"
     }
   ]
   

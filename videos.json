@@ -1,21 +1,39 @@
 [
     {
       "id": "1",
-      "title": "First Sample Video",
+      "title": "dog video",
       "description": "This is a description of the first video.",
       "thumbnail": "/images/video1-thumbnail.jpg",
-      "url": "/videos/video1.mp4",
+      "url": "/videos/dogs.mp4",
       "genre": "comedy",
       "forKids": "true"
     },
     {
       "id": "2",
-      "title": "Second Sample Video",
+      "title": "cat video",
       "description": "Another video description.",
       "thumbnail": "/images/video2-thumbnail.jpg",
-      "url": "/videos/video2.mp4",
+      "url": "/videos/cats.mp4",
       "genre": "horror",
       "forKids": "false"
+    },
+    {
+      "id": "3",
+      "title": "Recommended Video A",
+      "thumbnail": "/images/videoA-thumbnail.jpg",
+      "description": "This is a description of the first recommended video.",
+      "url": "/videos/skiing.mp4",
+      "genre": "romance",
+      "forKids": "false"
+    },
+    {
+      "id": "4",
+      "title": "Recommended Video B",
+      "description": "This is a description of the second recommended video.",
+      "thumbnail": "/images/videoB-thumbnail.jpg",
+      "url": "/videos/sunset.mp4",
+      "genre": "comedy",
+      "forKids": "true"
     }
   ]
   
