@@ -23,7 +23,7 @@ const recommendedVideos = require('./recommendedVideos.json')
 
 app.get('/search/:query', (req, res) => {
     const query = req.params.query.toLowerCase()
-    const searchResults = allVideos.filter(video => video.title.includes(query))
+    const searchResults = allVideos.filter(video => video.title.toLowerCase().includes(query))
     res.render('search', { 
         query: req.params.query, 
         searchResults
