@@ -26,7 +26,7 @@
             <li><a href="#">Settings</a></li>
             <li><a href="#">Post Video</a></li>
             <li><a href="#">Filters</a></li>
-            <li><a href="#">Saved</a></li>
+            <li><a href="saved">Saved</a></li>
         </ul>
     </div>
 
@@ -43,9 +43,16 @@
         <label>
             <input type="checkbox" id="for-kids"> For Kids
         </label>
-        <label>
-            <input type="checkbox" id="game"> Game
-        </label>
+        <label for="post-genre">Genre:</label>
+            <select id="post-genre" name="post-genre">
+            <option selected value="">Any</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+            <option value="documentary">Documentary</option>
+            <option value="animation">Animation</option>
+            </select>
         <button>Upload Video</button>
     </div>
 
@@ -54,13 +61,61 @@
     <script>
         function handleSearch(e) {
             e.preventDefault();
-            const query = document.getElementById('search-input').value.trim();
-            if (query) {
-                window.location.href = '/search/' + encodeURIComponent(query);
+            const search = document.getElementById('search-input').value.trim();
+            const genre = document.getElementById('genre-select').value.trim();
+            const kidFriendly = document.getElementById('kid-friendly-checkbox').checked;
+            let url = '/search?query=' + encodeURIComponent(search);
+            if (genre) {
+                url += '&genre=' + encodeURIComponent(genre);
             }
+            if (kidFriendly) {
+                url += '&forKids=' + encodeURIComponent(kidFriendly);
+            }
+            window.location.href = url;
+
         }
 
     </script>
+
+
+<div id="filter-backdrop" class="filter-hidden"></div>
+<div id="filter-modal" class="filter-hidden">
+    <div class="filter-dialog">
+
+    <div class="filter-header">
+        <h4>Search Filters</h4>
+        <button type="button" id="filter-close" class="filter-hide-button">&times;</button>
+    </div>
+
+    <div class="filter-body">
+
+        <div class="filter-input-element">
+            <label for="kid-friendly-checkbox">Kid friendly</label>
+            <input type="checkbox" id="kid-friendly-checkbox" name="kidFriendly">
+        </div>
+        <div class="filter-input-element">
+            <label for="genre-select">Genre</label>
+            <select id="genre-select" name="genre">
+                <option value="">Any</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="horror">Horror</option>
+                <option value="documentary">Documentary</option>
+                <option value="animation">Animation</option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="filter-input-element">
+        <button type="submit">Apply Filters</button>
+    </div>
+
+    </div>
+</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/templates.js" charset="utf-8"></script>

@@ -21,12 +21,35 @@ app.set('view engine', 'handlebars')
 const allVideos = require('./videos.json');
 const recommendedVideos = require('./recommendedVideos.json')
 
-app.get('/search/:query', (req, res) => {
-    const query = req.params.query.toLowerCase()
-    const searchResults = allVideos.filter(video => video.title.toLowerCase().includes(query))
+app.get('/search', (req, res) => {
+    const searchQuery = req.query.query ? req.query.query.toLowerCase() : '';
+    const genreFilter = req.query.genre ? req.query.genre.toLowerCase() : '';
+    const forKidsFilter = req.query.forKids
+
+    let filteredVideos = allVideos;
+
+    // Filter by search query if provided
+    if (searchQuery) {
+        filteredVideos = filteredVideos.filter(video => 
+            video.title.toLowerCase().includes(searchQuery) ||
+            video.description.toLowerCase().includes(searchQuery)
+        );
+    }
+
+    // Filter by genre if selected
+    if (genreFilter) {
+        filteredVideos = filteredVideos.filter(video => video.genre === genreFilter);
+    }
+
+    // Filter by 'Kid friendly' if checked
+    if (forKidsFilter) {
+        filteredVideos = filteredVideos.filter(video => video.forKids === 'true');
+    }
+
+    // Render the search results with the applied filters
     res.render('search', { 
-        query: req.params.query, 
-        searchResults
+        query: req.query.query || '',
+        searchResults: filteredVideos
     });
 });
 
