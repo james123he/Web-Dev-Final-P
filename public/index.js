@@ -22,6 +22,9 @@ console.log("== video-title:", videoTitle)
 var videoUrl = document.getElementById("video-url")
 console.log("== video-url:", videoUrl)
 
+var videoThumbnail = document.getElementById("video-thumbnail")
+console.log("== video-thumbnail:", videoThumbnail)
+
 var videoDes = document.getElementById("video-description")
 console.log("== video-description:", videoDes)
 
@@ -40,6 +43,7 @@ console.log("== cancel-upload-button:", cancelUploadButton)
 cancelUploadButton.addEventListener("click", function() {
 	videoTitle.value = videoTitle.defaultValue
 	videoUrl.value = videoUrl.defaultValue
+	videoThumbnail.value = videoThumbnail.defaultValue
 	videoDes.value = videoDes.defaultValue
 	forKids.checked = forKids.defaultChecked
 	postGenre.value = postGenre.defaultValue
@@ -47,4 +51,3 @@ cancelUploadButton.addEventListener("click", function() {
 	uploadBox.classList.add("hide-upload")
 	uploadBox.classList.remove("show-upload")
 })
-
