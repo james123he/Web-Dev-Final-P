@@ -13,6 +13,7 @@ console.log("== upload-button:", uploadButton)
 uploadButton.addEventListener("click", function() {
 	uploadBackdrop.classList.remove("hide-upload")
 	uploadBackdrop.classList.add("show-upload")
+	uploadBackdrop.classList.remove("hide-upload")
 	uploadBox.classList.add("show-upload")
 })
 

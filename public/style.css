@@ -206,6 +206,10 @@
 	opacity: 1;
 }
 
+#upload-backdrop {
+	height: 56px;
+}
+
 .show-upload-box {
   position: fixed;
   bottom: 24px;
@@ -236,7 +240,6 @@
   border-radius: 12px;
   width: 90%;
   max-width: 500px;
-  opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
   z-index: 110;
