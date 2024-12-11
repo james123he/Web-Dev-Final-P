@@ -1,20 +1,38 @@
 [
   {
     "id": "3",
-    "title": "Recommended Video A",
+    "title": "Skiing",
     "thumbnail": "/images/videoA-thumbnail.jpg",
-    "description": "This is a description of the first recommended video.",
+    "description": "Clip from skiiing trip",
     "url": "/videos/skiing.mp4",
     "genre": "romance",
     "forKids": "false"
   },
   {
     "id": "4",
-    "title": "Recommended Video B",
-    "description": "This is a description of the second recommended video.",
+    "title": "Sunset",
+    "description": "Short clip of a sunset",
     "thumbnail": "/images/videoB-thumbnail.jpg",
     "url": "/videos/sunset.mp4",
     "genre": "comedy",
+    "forKids": "true"
+  },
+  {
+    "id": "5",
+    "title": "Mountain Range",
+    "description": "Short video of a mountain range",
+    "thumbnail": "/images/videoC-thumbnail.jpg",
+    "url": "/videos/mountains.mp4",
+    "genre": "documentary",
+    "forKids": "true"
+  },
+  {
+    "id": "6",
+    "title": "Waterfall",
+    "description": "Short Video of a Waterfall",
+    "thumbnail": "/images/videoD-thumbnail.jpg",
+    "url": "/videos/waterfall.mp4",
+    "genre": "documentary",
     "forKids": "true"
   }
 ]
