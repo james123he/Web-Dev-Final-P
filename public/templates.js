@@ -17,9 +17,9 @@ templates['home'] = template({"1":function(container,depth0,helpers,partials,dat
         return undefined
     };
 
-  return "<div class=\"container\" id=\"recommended-page\">\r\n    <div class=\"recommended\">\r\n        <div class=\"section-title\">Recommended</div>\r\n        <div class=\"video-grid\">\r\n"
+  return "<div class=\"container\" id=\"recommended-page\">\n    <div class=\"recommended\">\n        <div class=\"section-title\">Recommended</div>\n        <div class=\"video-grid\">\n"
     + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"recommendedVideos") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":6,"column":12},"end":{"line":8,"column":21}}})) != null ? stack1 : "")
-    + "        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+    + "        </div>\n    </div>\n</div>\n\n";
 },"usePartial":true,"useData":true});
 templates['search'] = template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -38,11 +38,11 @@ templates['search'] = template({"1":function(container,depth0,helpers,partials,d
         return undefined
     };
 
-  return "<div class=\"container\" id=\"search-page\">\r\n    <div class=\"search-results\">\r\n        <div class=\"section-title\">Results for: \""
+  return "<div class=\"container\" id=\"search-page\">\n    <div class=\"search-results\">\n        <div class=\"section-title\">Results for: \""
     + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"query") || (depth0 != null ? lookupProperty(depth0,"query") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"query","hash":{},"data":data,"loc":{"start":{"line":4,"column":49},"end":{"line":4,"column":58}}}) : helper)))
-    + "\"\r\n        </div>\r\n        <div class=\"video-grid\">\r\n"
+    + "\"\n        </div>\n        <div class=\"video-grid\">\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"searchResults") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":7,"column":12},"end":{"line":9,"column":21}}})) != null ? stack1 : "")
-    + "        </div>\r\n    </div>\r\n</div>\r\n";
+    + "        </div>\n    </div>\n</div>\n";
 },"usePartial":true,"useData":true});
 templates['video-player'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -52,15 +52,15 @@ templates['video-player'] = template({"compiler":[8,">= 4.3.0"],"main":function(
         return undefined
     };
 
-  return "<div class=\"video-player-container\">\r\n    <h2>"
+  return "<div class=\"video-player-container\">\n    <h2>"
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"video") : depth0)) != null ? lookupProperty(stack1,"title") : stack1), depth0))
-    + "</h2>\r\n    <video class=\"video-player\" controls preload=\"metadata\" poster=\""
+    + "</h2>\n    <video class=\"video-player\" controls preload=\"metadata\" poster=\""
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"video") : depth0)) != null ? lookupProperty(stack1,"thumbnail") : stack1), depth0))
-    + "\">\r\n    <source src=\""
+    + "\">\n    <source src=\""
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"video") : depth0)) != null ? lookupProperty(stack1,"url") : stack1), depth0))
-    + "\" type=\"video/mp4\">\r\n    Your browser does not support the video tag.\r\n    </video>\r\n    <p>"
+    + "\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n    </video>\n    <p>"
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"video") : depth0)) != null ? lookupProperty(stack1,"description") : stack1), depth0))
-    + "</p>\r\n</div>";
+    + "</p>\n</div>";
 },"useData":true});
 templates['layouts/main'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -86,16 +86,16 @@ templates['partials/video'] = template({"compiler":[8,">= 4.3.0"],"main":functio
         return undefined
     };
 
-  return "<div class=\"video-item\">\r\n    <a href=\"/video/"
+  return "<div class=\"video-item\">\n    <a href=\"/video/"
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":2,"column":20},"end":{"line":2,"column":26}}}) : helper)))
-    + "\" class=\"video-link\">\r\n        <img src=\""
+    + "\" class=\"video-link\">\n        <img src=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"thumbnail") || (depth0 != null ? lookupProperty(depth0,"thumbnail") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"thumbnail","hash":{},"data":data,"loc":{"start":{"line":3,"column":18},"end":{"line":3,"column":31}}}) : helper)))
     + "\" alt=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":3,"column":38},"end":{"line":3,"column":47}}}) : helper)))
-    + "\" class=\"video-thumbnail\"/>\r\n        <h3 class=\"video-title\">"
+    + "\" class=\"video-thumbnail\"/>\n        <h3 class=\"video-title\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":4,"column":32},"end":{"line":4,"column":41}}}) : helper)))
-    + "</h3>\r\n    </a>\r\n    <p class=\"video-description\">"
+    + "</h3>\n    </a>\n    <p class=\"video-description\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"description") || (depth0 != null ? lookupProperty(depth0,"description") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data,"loc":{"start":{"line":6,"column":33},"end":{"line":6,"column":48}}}) : helper)))
-    + "</p>\r\n</div>\r\n\r\n\r\n\r\n";
+    + "</p>\n</div>\n\n\n\n";
 },"useData":true});
 })();
