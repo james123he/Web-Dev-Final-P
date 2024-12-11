@@ -78,22 +78,20 @@ app.get('/search', async (req, res) => {
             searchResults: filteredVideos
         });
     } catch (err) {
-        console.error('Error in search:', err);
-        res.status(500).send('Internal Server Error');
+        console.error('Error uploading video:', err);
+        res.status(500).json({ error: 'Failed to upload video' });
     }
 });
 
 app.post('/api/upload', async (req, res) => {
     try {
-        // Read current video data
         const { allVideos, recommendedVideos } = await getVideoData();
         
-        // Create new video object
         const newVideo = {
             id: (Math.max(...allVideos.map(v => parseInt(v.id))) + 1).toString(),
             title: req.body.title,
             description: req.body.description,
-            thumbnail: req.body.thumbnail || "/images/default-thumbnail.jpg",
+            thumbnail: req.body.thumbnail || "/images/default-thumbnail.jpg", // Use provided thumbnail
             url: req.body.url,
             genre: req.body.genre || "",
             forKids: req.body.forKids ? "true" : "false"

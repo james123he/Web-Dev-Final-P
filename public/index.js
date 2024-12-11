@@ -20,6 +20,7 @@ const elements = {
     forKids: document.getElementById("for-kids"),
     postGenre: document.getElementById("post-genre"),
     confirmUploadButton: document.getElementById("confirm-upload-button"),
+	videoThumbnail: document.getElementById("video-thumbnail"),
 
     filterForm: {
         genre: document.getElementById("genre-select"),
@@ -91,6 +92,7 @@ function hideUpload() {
     elements.videoDescription.value = elements.videoDescription.defaultValue;
     elements.forKids.checked = elements.forKids.defaultChecked;
     elements.postGenre.value = elements.postGenre.defaultValue;
+	elements.videoThumbnail.value = elements.videoThumbnail.defaultValue;
 }
 
 function handleSearch(e) {
@@ -99,9 +101,9 @@ function handleSearch(e) {
 }
 
 async function uploadVideo() {
-    // Get values from form
     const title = elements.videoTitle.value.trim();
     const url = elements.videoUrl.value.trim();
+    const thumbnail = elements.videoThumbnail.value.trim();
     const description = elements.videoDescription.value.trim();
     const forKids = elements.forKids.checked;
     const genre = elements.postGenre.value;
@@ -117,9 +119,9 @@ async function uploadVideo() {
         title,
         url,
         description,
+        thumbnail: thumbnail || "/images/default-thumbnail.jpg", // Use provided thumbnail or default
         forKids: forKids.toString(),
-        genre,
-        thumbnail: "/images/default-thumbnail.jpg" // Using default thumbnail
+        genre
     };
 
     try {
