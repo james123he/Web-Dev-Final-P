@@ -12,7 +12,7 @@ console.log("== upload-button:", uploadButton)
 
 uploadButton.addEventListener("click", function() {
 	uploadBackdrop.classList.remove("hide-upload")
-	uploadBackdrop.classList.remove("hide-upload")
+	uploadBox.classList.remove("hide-upload")
 	uploadBox.classList.add("show-upload")
 })
 
@@ -32,4 +32,19 @@ var postGenre = document.getElementById("post-genre")
 console.log("== post-genre:", postGenre)
 
 var confirmUploadButton = document.getElementById("confirm-upload-button")
-console.log("== confirm-upload-button", confirmUploadButton)
+console.log("== confirm-upload-button:", confirmUploadButton)
+
+var cancelUploadButton = document.getElementById("cancel-upload-button")
+console.log("== cancel-upload-button:", cancelUploadButton)
+
+cancelUploadButton.addEventListener("click", function() {
+	videoTitle.value = videoTitle.defaultValue
+	videoUrl.value = videoUrl.defaultValue
+	videoDes.value = videoDes.defaultValue
+	forKids.checked = forKids.defaultChecked
+	postGenre.value = postGenre.defaultValue
+	uploadBackdrop.classList.add("hide-upload")
+	uploadBox.classList.add("hide-upload")
+	uploadBox.classList.remove("show-upload")
+})
+
