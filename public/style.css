@@ -206,10 +206,6 @@
 	opacity: 1;
 }
 
-#upload-backdrop {
-	height: 56px;
-}
-
 .show-upload-box {
   position: fixed;
   bottom: 24px;
@@ -245,7 +241,7 @@
   z-index: 110;
 }
 
-.upload-box.show-upload-box {
+.upload-box.show-upload {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
