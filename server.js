@@ -10,6 +10,7 @@ var port = process.env.PORT || 3000
 
 app.set('views', path.join(__dirname, 'views'));
 app.use('/videos', express.static(path.join(__dirname, 'videos')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -23,14 +24,24 @@ const allVideos = require('./videos.json');
 const recommendedVideos = require('./recommendedVideos.json')
 
 app.get('/search', (req, res) => {
-    const searchQuery = req.query.query ? req.query.query.toLowerCase() : '';
+    // Check if we have any search parameters at all
+    const hasSearchParams = req.query.query !== undefined || 
+                          req.query.genre || 
+                          req.query.forKids;
+
+    // If no search parameters, redirect to home page
+    if (!hasSearchParams) {
+        return res.redirect('/');
+    }
+
+    const searchQuery = req.query.query ? req.query.query.toLowerCase().trim() : '';
     const genreFilter = req.query.genre ? req.query.genre.toLowerCase() : '';
-    const forKidsFilter = req.query.forKids
+    const forKidsFilter = req.query.forKids;
 
     let filteredVideos = allVideos;
 
-    // Filter by search query if provided
-    if (searchQuery) {
+    // Only apply search query filter if there's actually a search term
+    if (searchQuery !== '') {
         filteredVideos = filteredVideos.filter(video => 
             video.title.toLowerCase().includes(searchQuery) ||
             video.description.toLowerCase().includes(searchQuery)
@@ -66,7 +77,7 @@ app.get('/video/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('home', { recommendedVideos });
+    res.render('home', { recommendedVideos, allVideos });
 });
 
 
