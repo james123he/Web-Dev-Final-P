@@ -16,3 +16,20 @@ uploadButton.addEventListener("click", function() {
 	uploadBox.classList.add("show-upload")
 })
 
+var videoTitle = document.getElementById("video-title")
+console.log("== video-title:", videoTitle)
+
+var videoUrl = document.getElementById("video-url")
+console.log("== video-url:", videoUrl)
+
+var videoDes = document.getElementById("video-description")
+console.log("== video-description:", videoDes)
+
+var forKids = document.getElementById("for-kids")
+console.log("== for-kids:", forKids)
+
+var postGenre = document.getElementById("post-genre")
+console.log("== post-genre:", postGenre)
+
+var confirmUploadButton = document.getElementById("confirm-upload-button")
+console.log("== confirm-upload-button", confirmUploadButton)
